@@ -19,12 +19,13 @@ public class Game {
 		
 		this.player1.addGame(this);
 		this.player2.addGame(this);
+		
+		nowPlayer = player2;
 	}
 
 	public void run() {
 		Scanner sc = new Scanner(System.in);
 		int x, y;
-		nowPlayer = player1;
 		
 		for (int turn = 0; turn < Board.BOARD_SIZE * Board.BOARD_SIZE; turn++) {
 			System.out.print(board.toString());
@@ -46,5 +47,28 @@ public class Game {
 	
 	private void changePlayer() {
 		nowPlayer = (nowPlayer == player1)? player2 : player1;
+	}
+	public Player getNowPlayer() {
+		return nowPlayer;
+	}
+	
+	public void play(int x, int y) {
+		try {
+			changePlayer();
+			board.add(x, y);
+		} catch (RuntimeException e) {
+			
+		}
+	}
+	
+	public String toString() {
+		return board.toString();
+	}
+	
+	public boolean isWin(int x, int y) {
+		if (board.isWin(x, y)) {
+			return true;
+		}
+		return false;
 	}
 }

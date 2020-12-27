@@ -1,7 +1,7 @@
 package main;
 
 public class Board {
-	public static final int BOARD_SIZE = 15;
+	public static final int BOARD_SIZE = 19;
 	public static final int WIN_CONDITION = 3;
 
 	private int[][] board;

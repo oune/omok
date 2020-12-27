@@ -17,7 +17,6 @@ public class MenuController {
 
     @FXML
     void playClickHandler(ActionEvent event) {
-    	System.out.println(".");
         Stage primaryStage = (Stage)playButton.getScene().getWindow();
         Parent root;
 		try {
